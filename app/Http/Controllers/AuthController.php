@@ -46,9 +46,7 @@ class AuthController extends Controller
         ], 201);
     }
 
-    /**
-     * Connexion d'un élève.
-     */
+  
     public function login(Request $request)
     {
         // Validation des données entrantes
@@ -113,11 +111,5 @@ class AuthController extends Controller
         return response()->json(['success' => true, 'student' => $student], 200);
     }
 
-    public function deleteEtudiant(Request $request)
-    {
-        $student = $request->user();
-        $student->delete();
-
-        return response()->json(['success' => true], 200);
-    }
+  
 }
